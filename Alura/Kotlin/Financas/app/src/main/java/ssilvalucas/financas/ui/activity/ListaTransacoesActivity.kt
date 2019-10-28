@@ -1,10 +1,13 @@
-package ssilvalucas.financas
+package ssilvalucas.financas.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
+import ssilvalucas.financas.R
+import ssilvalucas.financas.model.Transacao
 import ssilvalucas.financas.ui.adapter.ListaTransacoesAdapter
+import java.math.BigDecimal
+import java.util.*
 
 class ListaTransacoesActivity : AppCompatActivity() {
 
@@ -12,10 +15,8 @@ class ListaTransacoesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_transacoes)
 
-        val lista = listOf("Item 1 - R$1,00", "Item 2 - R$20,00")
-
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, lista)
-
+        val lista = listOf(Transacao(BigDecimal(20.50), "comida", Calendar.getInstance()),
+            Transacao(BigDecimal(100.0), "Economia", Calendar.getInstance()))
 
         lista_transacoes_listview.setAdapter(ListaTransacoesAdapter(lista, this))
     }
