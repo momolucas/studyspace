@@ -18,6 +18,6 @@ class ListaTransacoesActivity : AppCompatActivity() {
         val lista = listOf(Transacao(valor = BigDecimal(20.50), tipo = Tipo.DESPESA),
             Transacao(valor = BigDecimal(100.0), categoria = "Economia", tipo = Tipo.RECEITA))
 
-        lista_transacoes_listview.setAdapter(ListaTransacoesAdapter(lista, this))
+        lista_transacoes_listview.adapter = ListaTransacoesAdapter(lista, this)
     }
 }
