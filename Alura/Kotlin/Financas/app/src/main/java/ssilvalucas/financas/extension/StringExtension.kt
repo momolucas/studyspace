@@ -1,9 +1,9 @@
 package ssilvalucas.financas.extension
 
 fun String.limitaEmAte(caracteres: Int) : String{
-    return if(this.length > caracteres){
-        "${this.substring(0, caracteres)}..."
-    } else{
-        this
+    if(this.length > caracteres){
+        val primeiroCaracter = 0
+        return "${this.substring(primeiroCaracter, caracteres)}..."
     }
+    return this
 }
