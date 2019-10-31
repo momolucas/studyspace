@@ -1,11 +1,12 @@
 package ssilvalucas.financas.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 import ssilvalucas.financas.R
 import ssilvalucas.financas.model.Tipo
 import ssilvalucas.financas.model.Transacao
+import ssilvalucas.financas.ui.ResumoView
 import ssilvalucas.financas.ui.adapter.ListaTransacoesAdapter
 import java.math.BigDecimal
 
@@ -17,7 +18,19 @@ class ListaTransacoesActivity : AppCompatActivity() {
 
         val transacoes: List<Transacao> = transacoesDeExemplo()
 
+        configuraResumo(transacoes)
+
         configuraLista(transacoes)
+    }
+
+    private fun configuraResumo(transacoes: List<Transacao>) {
+
+        val view = window.decorView
+        val resumoView = ResumoView(view, transacoes)
+
+        resumoView.adicionaReceita()
+        resumoView.adicionaDespesa()
+        resumoView.adicionaTotal()
     }
 
     private fun configuraLista(lista: List<Transacao>) {
