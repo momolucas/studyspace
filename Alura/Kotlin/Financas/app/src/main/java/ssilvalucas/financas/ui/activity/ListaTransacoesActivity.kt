@@ -1,6 +1,8 @@
 package ssilvalucas.financas.ui.activity
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 import ssilvalucas.financas.R
@@ -21,6 +23,11 @@ class ListaTransacoesActivity : AppCompatActivity() {
         configuraResumo(transacoes)
 
         configuraLista(transacoes)
+
+        lista_transacoes_adiciona_receita
+            .setOnClickListener {
+                Toast.makeText(this,"Clique de receita", Toast.LENGTH_LONG).show()
+            }
     }
 
     private fun configuraResumo(transacoes: List<Transacao>) {
