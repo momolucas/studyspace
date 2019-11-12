@@ -90,9 +90,9 @@ class ListaTransacoesActivity : AppCompatActivity() {
 
     private fun transacoesDeExemplo() =
         listOf(
-            Transacao(valor = BigDecimal(170), tipo = Tipo.DESPESA),
+            Transacao(valor = BigDecimal(20.50), tipo = Tipo.DESPESA),
             Transacao(
-                valor = BigDecimal(160.0),
+                valor = BigDecimal(100.0),
                 categoria = "Almoço de final de semana",
                 tipo = Tipo.RECEITA
             )
