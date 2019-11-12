@@ -3,6 +3,7 @@ package ssilvalucas.financas.ui.activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,7 +55,7 @@ class ListaTransacoesActivity : AppCompatActivity() {
                 viewCriada.form_transacao_data
                     .setOnClickListener {
                         DatePickerDialog(this,
-                            DatePickerDialog.OnDateSetListener { view, ano, mes, dia ->
+                            DatePickerDialog.OnDateSetListener { _, ano, mes, dia ->
                                 val dataSelecionada = Calendar.getInstance()
                                 dataSelecionada.set(ano, mes, dia)
                                 viewCriada.form_transacao_data
@@ -70,7 +71,9 @@ class ListaTransacoesActivity : AppCompatActivity() {
                 AlertDialog.Builder(this)
                     .setTitle(R.string.adiciona_receita)
                     .setView(viewCriada)
-                    .setPositiveButton("Adicionar", null)
+                    .setPositiveButton("Adicionar") { _, _ ->
+                        Toast.makeText(this, "${viewCriada.form_transacao_categoria.selectedItem} -- ${viewCriada.form_transacao_valor.text}", Toast.LENGTH_LONG).show()
+                    }
                     .setNegativeButton("Cancelar", null)
                     .show()
             }
