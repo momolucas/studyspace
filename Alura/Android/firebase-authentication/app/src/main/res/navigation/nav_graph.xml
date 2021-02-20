@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="momolucas.firebaseauthentication.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <navigation
+        android:id="@+id/login_graph"
+        android:label="Login Flow"
+        app:startDestination="@id/loginUserFragment">
+        <fragment
+            android:id="@+id/registerUserFragment"
+            android:name="momolucas.firebaseauthentication.ui.RegisterUserFragment"
+            android:label="Register User"
+            tools:layout="@layout/fragment_register_user" />
+        <fragment
+            android:id="@+id/loginUserFragment"
+            android:name="momolucas.firebaseauthentication.ui.LoginUserFragment"
+            android:label="Login User"
+            tools:layout="@layout/fragment_login_user">
+            <action
+                android:id="@+id/action_loginUserFragment_to_registerUserFragment"
+                app:destination="@id/registerUserFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            <action
+                android:id="@+id/action_login_to_homeFragment"
+                app:destination="@id/homeFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@id/loginUserFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+
+    </navigation>
+
+    <action
+        android:id="@+id/global_action_login"
+        app:destination="@+id/login_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+</navigation>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "965171125953",
+    "project_id": "study-space-29ec4",
+    "storage_bucket": "study-space-29ec4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965171125953:android:dc15c39dfd5a68ab79fe40",
+        "android_client_info": {
+          "package_name": "momolucas.firebaseauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965171125953-vg4cc8sokcklpbmmp67oenl5u7nveuot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXQpv5ZDDX_2tC64uZrsl92zjxOCf4LwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965171125953-vg4cc8sokcklpbmmp67oenl5u7nveuot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
